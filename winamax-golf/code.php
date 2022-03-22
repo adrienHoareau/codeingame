@@ -4,30 +4,15 @@
  * Auto-generated code below aims at helping you parse
  * the standard input according to the problem statement.
  * */
-/* fscanf(STDIN, "%d %d", $width, $height);
-  $rows = [];
-  for ($i = 0; $i < $height; $i++)
-  {
-  fscanf(STDIN, "%s", $row);
-  $rows[] = $row;
-  }
 
-  error_log(var_export($rows, true)); */
+fscanf(STDIN, "%d %d", $width, $height);
+$rows = [];
+for ($i = 0; $i < $height; $i++) {
+    fscanf(STDIN, "%s", $row);
+    $rows[] = $row;
+}
 
-
-
-$width = 8;
-$height = 8;
-$rows = array (
-  0 => '.XXX.5X.',
-  1 => 'X.4.X..X',
-  2 => 'X4..X3.X',
-  3 => 'X...X.X.',
-  4 => '.X.X.H.X',
-  5 => 'X.HX...X',
-  6 => 'X..X.H.X',
-  7 => '.XH.XXX.',
-);
+//error_log(var_export($rows, true));
 
 function echoLN($str)
 {
@@ -647,12 +632,9 @@ class Paths
 }
 
 $grid = new Grid($width, $height, $rows);
-//error_log($grid->render());
 $pathsDrawer = new PathsDrawer($grid);
 $pathFinder = new PathFinder($grid, $pathsDrawer);
 $newGrid = $pathFinder->drawValidPaths();
 echo $newGrid->render() . "\n";
-/* error_log(var_export($grid->getTiles(), true));
-  error_log(var_export($grid->getBallTiles(), true));
-  error_log(var_export($grid->getHoleTiles(), true)); */
+
 ?>
